@@ -1,0 +1,6 @@
+__pycache__/
+*.pkl
+checkpoints/
+wandb/
+slurm_logs/
+.DS_Store
