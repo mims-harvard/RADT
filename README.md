@@ -82,11 +82,11 @@ For Cardiogenesis, run `raDT/radt/cardiogenesis_data.ipynb` (from `raDT/radt`). 
 
 | Result | RADT | Baselines |
 |---|---|---|
-| Table 1, FetchReachObstacle, avoid-box widths 0.16 (in-distribution) to 0.24 | `bash raDT/radt/scripts/train_fetch.sh`<br>`bash raDT/radt/scripts/evaluate.sh fetch <checkpoint>` | `bash raDT/baselines/scripts/train_fetch.sh` (retrained for each width) |
-| Table 2, UMazeObstacle, 1 avoid region (in-distribution) | `bash raDT/radt/scripts/train_maze.sh`<br>`bash raDT/radt/scripts/evaluate.sh umaze1 <checkpoint>` | `bash raDT/baselines/scripts/train_maze.sh` (retrained for each number of avoid regions) |
-| Table 2, UMazeObstacle, 3 avoid regions (in-distribution) and 4-7 (zero-shot) | `bash raDT/radt/scripts/evaluate.sh umaze3 <checkpoint>` | |
-| Table 2, AMazeObstacle and HMazeObstacle, 3 avoid regions (in-distribution), 5 and 7 (zero-shot) | `bash raDT/radt/scripts/evaluate.sh amaze <checkpoint>`<br>`bash raDT/radt/scripts/evaluate.sh hmaze <checkpoint>` | |
-| Figure 4c and Table 5, Cardiogenesis | `bash raDT/radt/scripts/train_cardio.sh`<br>then `raDT/radt/cardiogenesis_eval.ipynb` | |
+| FetchReachObstacle, avoid-box widths 0.16 (in-distribution) to 0.24 | `bash raDT/radt/scripts/train_fetch.sh`<br>`bash raDT/radt/scripts/evaluate.sh fetch <checkpoint>` | `bash raDT/baselines/scripts/train_fetch.sh` (retrained for each width) |
+| UMazeObstacle, 1 avoid region (in-distribution) | `bash raDT/radt/scripts/train_maze.sh`<br>`bash raDT/radt/scripts/evaluate.sh umaze1 <checkpoint>` | `bash raDT/baselines/scripts/train_maze.sh` (retrained for each number of avoid regions) |
+| UMazeObstacle, 3 avoid regions (in-distribution) and 4-7 (zero-shot) | `bash raDT/radt/scripts/evaluate.sh umaze3 <checkpoint>` | |
+| AMazeObstacle and HMazeObstacle, 3 avoid regions (in-distribution), 5 and 7 (zero-shot) | `bash raDT/radt/scripts/evaluate.sh amaze <checkpoint>`<br>`bash raDT/radt/scripts/evaluate.sh hmaze <checkpoint>` | |
+| Cardiogenesis | `bash raDT/radt/scripts/train_cardio.sh`<br>then `raDT/radt/cardiogenesis_eval.ipynb` | |
 
 `train_maze.sh` trains all RADT maze models: UMaze with 1 and with 3 avoid regions, and AMaze and HMaze with 3 avoid regions. UMaze episodes are 300 steps long and AMaze/HMaze episodes are 800 steps long. RADT models are trained with 3 seeds (`--seed 0/1/2`); the baselines with 3 seeds per run (`--n_seeds 3`).
 
