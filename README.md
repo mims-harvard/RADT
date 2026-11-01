@@ -63,11 +63,11 @@ pip install -e .
 
 Training logs to Weights & Biases by default; pass `--no_wandb` to `train.py` (RADT and baselines) to turn it off.
 
-## Reproducing the main results
+## Pipeline
 
 All commands below are run from the repository root with the `radt` environment active. Each script runs every configuration of an experiment one after another; to run them in parallel, copy individual commands out of the scripts or submit the scripts to your job scheduler (e.g. `sbatch --wrap "bash raDT/radt/scripts/train_fetch.sh"`). A GPU is recommended for training.
 
-### 1. Data
+### 1. Data prep
 
 ```bash
 # random-policy data for all environments, and cost labels for the larger FetchReach avoid boxes
@@ -91,16 +91,6 @@ For Cardiogenesis, run `raDT/radt/cardiogenesis_data.ipynb` (from `raDT/radt`). 
 `train_maze.sh` trains all RADT maze models: UMaze with 1 and with 3 avoid regions, and AMaze and HMaze with 3 avoid regions. UMaze episodes are 300 steps long and AMaze/HMaze episodes are 800 steps long. RADT models are trained with 3 seeds (`--seed 0/1/2`); the baselines with 3 seeds per run (`--n_seeds 3`).
 
 Baseline checkpoints are evaluated with `bash raDT/baselines/scripts/evaluate.sh <env> <checkpoint> [options]`; see the examples at the top of that script.
-
-### 3. Checkpoint selection
-
-RADT is evaluated and saved every 500 training iterations (`evaluation/mnc` and `evaluation/success_rate`, printed and logged to Weights & Biases), and the baselines after every epoch. For each run we use the checkpoint with the lowest mean normalized cost (MNC) among the checkpoints whose goal-reaching success rate (SR) is within 0.05 of the highest SR of the run. This avoids models that reach a low MNC by not moving towards the goal. The selected checkpoint is then evaluated with the commands above.
-
-Metrics:
-- **MNC**: the fraction of steps of an episode spent inside an avoid region, averaged over episodes.
-- **SR**: the fraction of episodes that reach the goal.
-
-The baselines' per-epoch evaluation logs the success rate and the total (not normalized) cost per episode; evaluate candidate checkpoints with `raDT/baselines/evaluate.py` to obtain MNC.
 
 ### Notes
 
