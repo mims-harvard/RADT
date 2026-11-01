@@ -59,13 +59,13 @@ pip install -e .
 
 ### Configure paths
 
-**`raDT/constants.py` is the only file you need to edit.** It sets where datasets, checkpoints and Weights & Biases logs are written (by default, folders inside this repository) and your Weights & Biases entity and project names. All scripts read these settings; dataset and checkpoint arguments on the command line are relative to these folders.
+**Configure system paths in `raDT/constants.py`.** It sets where datasets, checkpoints and Weights & Biases logs are written (by default, folders inside this repository) and your Weights & Biases entity and project names. All scripts read these settings; dataset and checkpoint arguments on the command line are relative to these folders.
 
 Training logs to Weights & Biases by default; pass `--no_wandb` to `train.py` (RADT and baselines) to turn it off.
 
 ## Pipeline
 
-All commands below are run from the repository root with the `radt` environment active. Each script runs every configuration of an experiment one after another; to run them in parallel, copy individual commands out of the scripts or submit the scripts to your job scheduler (e.g. `sbatch --wrap "bash raDT/radt/scripts/train_fetch.sh"`). A GPU is recommended for training.
+All commands below are run from the repository root with the `radt` environment active. Each script runs every configuration of an experiment one after another; to run them in parallel, copy individual commands out of the scripts or submit the scripts to your job scheduler. A GPU is recommended for training.
 
 ### 1. Data prep
 
