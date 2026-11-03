@@ -1,6 +1,6 @@
 # Reach-Avoid Decision Transformer (RADT)
 
-This repository is the official implementation of [Hindsight Relabeling is All You Need for Reach-Avoid Learning (RADT)](https://github.com/mims-harvard/RADT/tree/master) (NeurIPS 2026).
+This repository is the official implementation of [Hindsight Relabeling is All You Need for Reach-Avoid Learning (RADT)](https://arxiv.org/abs/2505.19337) (NeurIPS 2026).
 
 The code for training and evaluating the baselines is built on top of the [RbSL repository](https://github.com/Sunlighted/RbSL.git), and the code for training and evaluating RADT is built on top of the [MGPO repository](https://github.com/PKU-RL/MGPO.git).
 
