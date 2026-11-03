@@ -1,6 +1,6 @@
 # Reach-Avoid Decision Transformer (RADT)
 
-This repository is the official implementation of [Hindsight Relabeling is All You Need for Reach-Avoid Learning (RADT)](https://github.com/mims-harvard/RADT/tree/master).
+This repository is the official implementation of [Hindsight Relabeling is All You Need for Reach-Avoid Learning (RADT)](https://github.com/mims-harvard/RADT/tree/master) (NeurIPS 2026).
 
 The code for training and evaluating the baselines is built on top of the [RbSL repository](https://github.com/Sunlighted/RbSL.git), and the code for training and evaluating RADT is built on top of the [MGPO repository](https://github.com/PKU-RL/MGPO.git).
 
@@ -99,5 +99,22 @@ Baseline checkpoints are evaluated with `bash raDT/baselines/scripts/evaluate.sh
 - In `Cardiogenesis`, avoid tokens are the 15-dimensional avoid states, and the goal of the case study is the first heart field (FHF) attractor `100010010101100`.
 - See `python3 <script> --help` for all options of each script.
 
+## Contact
+For questions, please contact Kevin Li at <likevin@mit.edu>.
+
+
 ## License
 The code in this package is licensed under the MIT License.
+
+## Citation
+
+```bibtex
+@inproceedings{li2026radt,
+  title     = {Hindsight Relabeling is All You Need for Reach-Avoid Learning},
+  author    = {Li, Kevin and Zitnik, Marinka},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2026},
+  eprint    = {2505.19337},
+  archivePrefix = {arXiv}
+}
+```
