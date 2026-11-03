@@ -1,6 +1,6 @@
 # Reach-Avoid Decision Transformer (RADT)
 
-This repository is the official implementation of [Hindsight Relabeling is All You Need for Reach-Avoid Learning (RADT)]().
+This repository is the official implementation of [Hindsight Relabeling is All You Need for Reach-Avoid Learning (RADT)](https://github.com/mims-harvard/RADT/tree/master).
 
 The code for training and evaluating the baselines is built on top of the [RbSL repository](https://github.com/Sunlighted/RbSL.git), and the code for training and evaluating RADT is built on top of the [MGPO repository](https://github.com/PKU-RL/MGPO.git).
 
@@ -98,3 +98,6 @@ Baseline checkpoints are evaluated with `bash raDT/baselines/scripts/evaluate.sh
 - In `FetchReachObstacle`, `--bsa_box_size` is half of the avoid-box width. In the maze environments, avoid regions are circles of radius 0.2 and RADT is prompted with the circumscribing boxes.
 - In `Cardiogenesis`, avoid tokens are the 15-dimensional avoid states, and the goal of the case study is the first heart field (FHF) attractor `100010010101100`.
 - See `python3 <script> --help` for all options of each script.
+
+## License
+The code in this package is licensed under the MIT License.
